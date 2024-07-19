@@ -1,0 +1,105 @@
+import streamlit as st
+import pandas as pd
+import os
+from time import sleep
+
+
+def cadastrar():
+    if os.path.exists('clientes.csv'):
+        tabclientes = pd.read_csv('clientes.csv', sep=",")
+
+        with st.form("configp", clear_on_submit=True):
+            cidade = st.selectbox(label="Selecione o Ativo:", options=["Condeúba", "Maetinga"])
+            nome = st.text_input("Digite seu nome")
+            telefone = st.text_input("Digite o Telefone")
+            rg = st.text_input("Digite seu RG")
+            cpf = st.text_input("Digite seu CPF")
+            endereco_obra = st.text_input("Digite o Endereço da Obra", placeholder="Rua, nº e bairro")
+            endereco_resid = st.text_input("Digite o Endereço Residencial", placeholder="Rua, nº e bairro")
+            btn_cadastro = st.form_submit_button("Cadastrar Dados")
+
+            if btn_cadastro:
+                cidadec = cidade
+                cliente = nome
+                fone = telefone
+                rgc = rg
+                cpfc = cpf
+                end1 = endereco_obra
+                end2 = endereco_resid
+                data2 = pd.DataFrame(tabclientes)
+                d = {"Cidade": cidadec, "Nome": cliente, "Telefone": fone, "RG": rgc, "CPF": cpfc, "Endereço_Obra": end1,
+                     "Endereço_Residencial": end2}
+                df2 = pd.DataFrame(d, index=[0])
+                data2 = pd.concat([data2, df2], ignore_index=True)
+                data2.to_csv('clientes.csv', index=False)
+                st.success("# Cadastro Efetuado com sucesso!!!!")
+                sleep(1)
+                st.experimental_rerun()
+
+
+
+    else:
+        with st.form("configp", clear_on_submit=True):
+            cidade = st.selectbox(label="Selecione a sua Cidade:", options=["Condeúba", "Maetinga"])
+            nome = st.text_input("Digite seu nome")
+            telefone = st.text_input("Digite o Telefone")
+            rg = st.text_input("Digite seu RG")
+            cpf = st.text_input("Digite seu CPF")
+            endereco_obra = st.text_input("Digite o Endereço da Obra", placeholder="Rua, nº e bairro")
+            endereco_resid = st.text_input("Digite o Endereço Residencial", placeholder="Rua, nº e bairro" )
+            btn_cadastro = st.form_submit_button("Cadastrar Dados")
+
+            if btn_cadastro:
+                cidadec = cidade
+                cliente = nome
+                fone = telefone
+                rgc = rg
+                cpfc = cpf
+                end1 = endereco_obra
+                end2 = endereco_resid
+                data2 = pd.DataFrame(columns=['Cidade', 'Nome', 'Telefone','RG', 'CPF', 'Endereço_Obra','Endereço_Residencial' ])
+                d = {"Cidade": cidadec, "Nome": cliente, "Telefone": fone, "RG": rgc, "CPF": cpfc, "Endereço_Obra": end1,"Endereço_Residencial": end2}
+                df2 = pd.DataFrame(d, index=[0])
+                data2 = pd.concat([data2, df2], ignore_index=True)
+                data2.to_csv('clientes.csv', index=False)
+                st.success("# Cadastro Efetuado com sucesso!!!!")
+                sleep(1)
+                st.experimental_rerun()
+
+
+
+def visualisar():
+    if os.path.exists('clientes.csv'):
+        tabclientes = pd.read_csv('clientes.csv', sep=",")
+        senha = st.text_input("Digite a senha para visualizar os dados", type="password")
+        btn_visualizar = st.button("Visualizar")
+        if btn_visualizar:
+            if senha == "ki47trqwe":
+
+                st.table(tabclientes)
+
+            else:
+                st.error("Senha errada")
+
+
+
+def apagar():
+    if os.path.exists('clientes.csv'):
+        senha2 = st.text_input("Digite a senha para Apagar os dados", type="password")
+        btn_apagar = st.button("Apagar Dados dos Clientes", type="primary")
+        if btn_apagar:
+            if senha2 == "ki47trqwe":
+
+
+                os.remove('clientes.csv')
+                st.success("Dados Deletados com sucesso")
+                sleep(2)
+                st.experimental_rerun()
+            else:
+                st.error("Senha errada")
+
+
+
+
+
+
