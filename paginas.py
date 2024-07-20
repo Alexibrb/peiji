@@ -105,7 +105,7 @@ def cadastrar():
                      "Endereço_Residencial": end2,
                      "Observação":obs1
                     }
-                }
+                
                 df2 = pd.DataFrame(d, index=[0])
                 data2 = pd.concat([data2, df2], ignore_index=True)
                 data2.to_csv('clientes.csv', index=False)
