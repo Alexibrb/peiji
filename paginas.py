@@ -9,20 +9,13 @@ def cadastrar():
         tabclientes = pd.read_csv('clientes.csv', sep=",")
 
         with st.form("configp", clear_on_submit=True):
-            cidade = st.selectbox(label="Selecione a sua Cidade:", options=[
-                "Condeúba", 
-                "Maetinga",
-                "Pres. Jânio Quadros",
-                "Cordeiros",
-                "Piripá",
-                "Mortugaba"
-            ])
-            nome = st.text_input("Digite seu nome", placeholder="Nome Completo")
-            telefone = st.text_input("Digite seu Telefone", placeholder="(xx) xxxx-xxxx")
-            rg = st.text_input("Digite seu RG",placeholder="xxxxxxxx-xx")
-            cpf = st.text_input("Digite seu CPF",placeholder="xxx.xxx.xxx-xx")
+            cidade = st.selectbox(label="Selecione o Ativo:", options=["Condeúba", "Maetinga"])
+            nome = st.text_input("Digite seu nome")
+            telefone = st.text_input("Digite o Telefone")
+            rg = st.text_input("Digite seu RG")
+            cpf = st.text_input("Digite seu CPF")
             endereco_obra = st.text_input("Digite o Endereço da Obra", placeholder="Rua, nº e bairro")
-            endereco_resid = st.text_input("Digite o Endereço Residencial", placeholder="Rua, nº e bairro" )
+            endereco_resid = st.text_input("Digite o Endereço Residencial", placeholder="Rua, nº e bairro")
             btn_cadastro = st.form_submit_button("Cadastrar Dados")
 
             if btn_cadastro:
@@ -47,11 +40,18 @@ def cadastrar():
 
     else:
         with st.form("configp", clear_on_submit=True):
-            cidade = st.selectbox(label="Selecione a sua Cidade:", options=["Condeúba", "Maetinga"])
-            nome = st.text_input("Digite seu nome")
-            telefone = st.text_input("Digite o Telefone")
-            rg = st.text_input("Digite seu RG")
-            cpf = st.text_input("Digite seu CPF")
+            cidade = st.selectbox(label="Selecione a sua Cidade:", options=[
+                "Condeúba",
+                "Maetinga",
+                "Pres. Jânio Quadros",
+                "Cordeiros",
+                "Piripá",
+                "Mortugaba"
+            ])
+            nome = st.text_input("Digite seu nome", placeholder="Nome Completo")
+            telefone = st.text_input("Digite seu Telefone", placeholder="(xx) xxxx-xxxx")
+            rg = st.text_input("Digite seu RG",placeholder="xxxxxxxx-xx")
+            cpf = st.text_input("Digite seu CPF",placeholder="xxx.xxx.xxx-xx")
             endereco_obra = st.text_input("Digite o Endereço da Obra", placeholder="Rua, nº e bairro")
             endereco_resid = st.text_input("Digite o Endereço Residencial", placeholder="Rua, nº e bairro" )
             btn_cadastro = st.form_submit_button("Cadastrar Dados")
