@@ -24,6 +24,15 @@ def cadastrar():
             endereco_obra = st.text_input("Digite o Endereço da Obra", placeholder="Rua, nº e bairro")
             endereco_resid = st.text_input("Digite o Endereço Residencial", placeholder="Rua, nº e bairro")
             obs = st.text_area("Observação", placeholder="não obrigatório")
+            # Verificação dos valores dos campos
+            st.write("Cidade:", cidade)
+            st.write("Nome:", nome)
+            st.write("Telefone:", telefone)
+            st.write("RG:", rg)
+            st.write("CPF:", cpf)
+            st.write("Endereço Obra:", endereco_obra)
+            st.write("Endereço Residencial:", endereco_resid)
+            st.write("Observação:", obs)
             todos_preenchidos = (cidade and nome.strip() and telefone.strip() and rg.strip() and cpf.strip() and endereco_obra.strip() and endereco_resid.strip()) 
             btn_cadastro = st.form_submit_button("Cadastrar Dados", disabled=not todos_preenchidos)
 
