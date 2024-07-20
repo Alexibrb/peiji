@@ -34,6 +34,7 @@ def cadastrar():
             st.write("Endereço Residencial:", endereco_resid)
             st.write("Observação:", obs)
             todos_preenchidos = (cidade and nome.strip() and telefone.strip() and rg.strip() and cpf.strip() and endereco_obra.strip() and endereco_resid.strip()) 
+            st.write("Todos Preenchidos:", todos_preenchidos)
             btn_cadastro = st.form_submit_button("Cadastrar Dados", disabled=not todos_preenchidos)
 
             if btn_cadastro:
@@ -91,6 +92,7 @@ def cadastrar():
             st.write("Endereço Residencial:", endereco_resid)
             st.write("Observação:", obs)
             todos_preenchidos = (cidade and nome.strip() and telefone.strip() and rg.strip() and cpf.strip() and endereco_obra.strip() and endereco_resid.strip())
+            st.write("Todos Preenchidos:", todos_preenchidos)
             btn_cadastro = st.form_submit_button("Cadastrar Dados", disabled=not todos_preenchidos)
 
             if btn_cadastro:
