@@ -94,6 +94,8 @@ def visualisar():
 
             else:
                 st.error("Senha errada")
+    else:
+        st.warning("### Nenhum Registro Encontrado")
 
 
 
