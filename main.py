@@ -10,9 +10,10 @@ st.set_page_config(
 )
 estilos()
 titulo()
-cadastrar()
 tab1, tab2 = st.tabs(["Cadastar", "Visualizar"])
 with tab1:
-    visualisar()
+    cadastrar()
+ 
 with tab2:
+    visualisar()
     apagar()
