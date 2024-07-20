@@ -18,7 +18,7 @@ def cadastrar():
                 "Mortugaba"
             ])
             nome = st.text_input("Digite seu nome", placeholder="Nome Completo")
-            telefone = st.text_input("Digite seu Telefone", placeholder="(xx) xxxx-xxxc")
+            telefone = st.text_input("Digite seu Telefone", placeholder="(xx) xxxx-xxxx")
             rg = st.text_input("Digite seu RG",placeholder="xxxxxxxx-xx")
             cpf = st.text_input("Digite seu CPF",placeholder="xxx.xxx.xxx-xx")
             endereco_obra = st.text_input("Digite o Endereço da Obra", placeholder="Rua, nº e bairro")
