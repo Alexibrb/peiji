@@ -7,7 +7,7 @@ def spinner():
         time.sleep(1)
 def titulo():
     st.success("# Paulo Eiji Viana \n  Engenheiro Civil - :blue[CREABA 37645/D] | Fone: :blue[(77) 98813-3951]")
-    st.markdown("# 📢 CADASTRO DE CLIENTES")
+    st.markdown("### 📢 CADASTRO DE CLIENTES")
     st.write("---")
 
 
