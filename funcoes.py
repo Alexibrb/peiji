@@ -11,13 +11,13 @@ def titulo():
     st.write("---")
 
 
+
 def estilos():
     st.markdown("""
         <style>
         .stButton > button {
             brow-widget stButton #262730; 
             background-color: #000000; 
-            color: white;
             padding: 25px 25px;  
             text-align: center;
             display: inline-block;
@@ -27,6 +27,7 @@ def estilos():
             border: 1px solid;
             border-radius: 8px;
             width: 100%;
+            color: white;
         }
 
         .stButton > button:hover {
