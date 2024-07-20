@@ -27,9 +27,9 @@ def cadastrar():
             cpf = st.text_input("Digite seu CPF", placeholder="xxx.xxx.xxx-xx")
             endereco_obra = st.text_input("Digite o Endereço da Obra", placeholder="Rua, nº e bairro")
             endereco_resid = st.text_input("Digite o Endereço Residencial", placeholder="Rua, nº e bairro")
-            obs = st.text_area("Observação", placeholder="não obrigatório"
+            obs = st.text_area("Observação", placeholder="não obrigatório")
             todos_preenchidos = nome and telefone and rg and cpf and endereco_obra and endereco_resid 
-            btn_cadastro = st.form_submit_button("Cadastrar Dados")
+            btn_cadastro = st.form_submit_button("Cadastrar Dados", disabled=not todos_preenchidos)
 
             if btn_cadastro:
                 cidadec = cidade
@@ -75,9 +75,9 @@ def cadastrar():
             cpf = st.text_input("Digite seu CPF",placeholder="xxx.xxx.xxx-xx")
             endereco_obra = st.text_input("Digite o Endereço da Obra", placeholder="Rua, nº e bairro")
             endereco_resid = st.text_input("Digite o Endereço Residencial", placeholder="Rua, nº e bairro" )
-            obs = st.text_area("Observação", placeholder="não obrigatório"
+            obs = st.text_area("Observação", placeholder="não obrigatório")
             todos_preenchidos = nome and telefone and rg and cpf and endereco_obra and endereco_resid 
-            btn_cadastro = st.form_submit_button("Cadastrar Dados")
+            btn_cadastro = st.form_submit_button("Cadastrar Dados", disabled=not todos_preenchidos)
 
             if btn_cadastro:
                 cidadec = cidade
