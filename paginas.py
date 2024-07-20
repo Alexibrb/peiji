@@ -27,6 +27,8 @@ def cadastrar():
             cpf = st.text_input("Digite seu CPF", placeholder="xxx.xxx.xxx-xx")
             endereco_obra = st.text_input("Digite o Endereço da Obra", placeholder="Rua, nº e bairro")
             endereco_resid = st.text_input("Digite o Endereço Residencial", placeholder="Rua, nº e bairro")
+            obs = st.text_area("Observação", placeholder="não obrigatório"
+            todos_preenchidos = nome and telefone and rg and cpf and endereco_obra and endereco_resid 
             btn_cadastro = st.form_submit_button("Cadastrar Dados")
 
             if btn_cadastro:
@@ -37,9 +39,17 @@ def cadastrar():
                 cpfc = cpf
                 end1 = endereco_obra
                 end2 = endereco_resid
+                obs1 = obs
                 data2 = pd.DataFrame(tabclientes)
-                d = {"Cidade": cidadec, "Nome": cliente, "Telefone": fone, "RG": rgc, "CPF": cpfc, "Endereço_Obra": end1,
-                     "Endereço_Residencial": end2}
+                d = {"Cidade": cidadec, 
+                     "Nome": cliente, 
+                     "Telefone": fone, 
+                     "RG": rgc, 
+                     "CPF": cpfc, 
+                     "Endereço_Obra": end1,
+                     "Endereço_Residencial": end2,
+                     "Observação":obs1
+                    }
                 df2 = pd.DataFrame(d, index=[0])
                 data2 = pd.concat([data2, df2], ignore_index=True)
                 data2.to_csv('clientes.csv', index=False)
@@ -65,6 +75,8 @@ def cadastrar():
             cpf = st.text_input("Digite seu CPF",placeholder="xxx.xxx.xxx-xx")
             endereco_obra = st.text_input("Digite o Endereço da Obra", placeholder="Rua, nº e bairro")
             endereco_resid = st.text_input("Digite o Endereço Residencial", placeholder="Rua, nº e bairro" )
+            obs = st.text_area("Observação", placeholder="não obrigatório"
+            todos_preenchidos = nome and telefone and rg and cpf and endereco_obra and endereco_resid 
             btn_cadastro = st.form_submit_button("Cadastrar Dados")
 
             if btn_cadastro:
@@ -75,15 +87,24 @@ def cadastrar():
                 cpfc = cpf
                 end1 = endereco_obra
                 end2 = endereco_resid
-                data2 = pd.DataFrame(columns=['Cidade', 'Nome', 'Telefone','RG', 'CPF', 'Endereço_Obra','Endereço_Residencial' ])
-                d = {
-                    "Cidade": cidadec,
-                    "Nome": cliente,
-                    "Telefone": fone,
-                    "RG": rgc,
-                    "CPF": cpfc,
-                    "Endereço_Obra": end1,
-                    "Endereço_Residencial": end2
+                data2 = pd.DataFrame(columns=['Cidade', 
+                                              'Nome', 
+                                              'Telefone',
+                                              'RG', 
+                                              'CPF',
+                                              'Endereço_Obra',
+                                              'Endereço_Residencial'
+                                              'obs'
+                                             ])
+                d = {"Cidade": cidadec, 
+                     "Nome": cliente, 
+                     "Telefone": fone, 
+                     "RG": rgc, 
+                     "CPF": cpfc, 
+                     "Endereço_Obra": end1,
+                     "Endereço_Residencial": end2,
+                     "Observação":obs1
+                    }
                 }
                 df2 = pd.DataFrame(d, index=[0])
                 data2 = pd.concat([data2, df2], ignore_index=True)
