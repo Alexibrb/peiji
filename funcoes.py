@@ -17,6 +17,7 @@ def estilos():
         .stButton > button {
             brow-widget stButton #262730; 
             background-color: #000000; 
+            color: white;
             padding: 25px 25px;  
             text-align: center;
             display: inline-block;
