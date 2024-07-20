@@ -1,11 +1,7 @@
 import streamlit as st
-
 import pandas as pd
 import os
 from time import sleep
-
-
-
 
 
 def cadastrar():
@@ -103,7 +99,7 @@ def cadastrar():
                      "CPF": cpfc, 
                      "Endereço_Obra": end1,
                      "Endereço_Residencial": end2,
-                     "Observação":obs1
+                     "Observação": obs1
                     }
                 
                 df2 = pd.DataFrame(d, index=[0])
