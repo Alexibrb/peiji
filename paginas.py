@@ -29,7 +29,7 @@ def cadastrar():
                 ativo = True
             else:
                 ativo = False
-            btn_cadastro = st.form_submit_button("Cadastrar Dados", Disable=ativo )
+            btn_cadastro = st.form_submit_button("Cadastrar Dados", disabled=ativo )
 
             if btn_cadastro:
                 cidadec = cidade
@@ -80,7 +80,7 @@ def cadastrar():
                 ativo = True
             else:
                 ativo = False
-            btn_cadastro = st.form_submit_button("Cadastrar Dados", Disable=ativo)
+            btn_cadastro = st.form_submit_button("Cadastrar Dados", disabled=ativo)
 
             if btn_cadastro:
                 cidadec = cidade
