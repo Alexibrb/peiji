@@ -24,11 +24,12 @@ def cadastrar():
             endereco_obra = st.text_input("Digite o Endereço da Obra", placeholder="Rua, nº e bairro")
             endereco_resid = st.text_input("Digite o Endereço Residencial", placeholder="Rua, nº e bairro")
             obs = st.text_area("Observação", placeholder="não obrigatório")
+            
             if nome and telefone and rg and cpf and endedreco_obra and endereco_resid:
                 ativo = True
             else:
                 ativo = False
-            btn_cadastro = st.form_submit_button("Cadastrar Dados", disable=ativo )
+            btn_cadastro = st.form_submit_button("Cadastrar Dados", Disable=ativo )
 
             if btn_cadastro:
                 cidadec = cidade
@@ -79,7 +80,7 @@ def cadastrar():
                 ativo = True
             else:
                 ativo = False
-            btn_cadastro = st.form_submit_button("Cadastrar Dados", disable=ativo)
+            btn_cadastro = st.form_submit_button("Cadastrar Dados", Disable=ativo)
 
             if btn_cadastro:
                 cidadec = cidade
