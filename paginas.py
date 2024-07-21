@@ -4,22 +4,25 @@ import os
 from time import sleep
 
 # Inicializando o estado da sessão para os campos do formulário
-if 'cidade' not in st.session_state:
-    st.session_state.cidade = ''
-if 'nome' not in st.session_state:
-    st.session_state.nome = ''
-if 'telefone' not in st.session_state:
-    st.session_state.telefone = ''
-if 'rg' not in st.session_state:
-    st.session_state.rg = ''
-if 'cpf' not in st.session_state:
-    st.session_state.cpf = ''
-if 'endereco_obra' not in st.session_state:
-    st.session_state.endereco_obra = ''
-if 'endereco_resid' not in st.session_state:
-    st.session_state.endereco_resid = ''
-if 'obs' not in st.session_state:
-    st.session_state.obs = ''
+def initialize_session_state():
+    if 'cidade' not in st.session_state:
+        st.session_state.cidade = ''
+    if 'nome' not in st.session_state:
+        st.session_state.nome = ''
+    if 'telefone' not in st.session_state:
+        st.session_state.telefone = ''
+    if 'rg' not in st.session_state:
+        st.session_state.rg = ''
+    if 'cpf' not in st.session_state:
+        st.session_state.cpf = ''
+    if 'endereco_obra' not in st.session_state:
+        st.session_state.endereco_obra = ''
+    if 'endereco_resid' not in st.session_state:
+        st.session_state.endereco_resid = ''
+    if 'obs' not in st.session_state:
+        st.session_state.obs = ''
+
+initialize_session_state()
 
 def are_fields_filled(nome, telefone, rg, cpf, endereco_obra, endereco_resid):
     return nome and telefone and rg and cpf and endereco_obra and endereco_resid
