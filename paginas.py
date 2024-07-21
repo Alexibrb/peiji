@@ -26,9 +26,9 @@ def cadastrar():
             obs = st.text_area("Observação", placeholder="não obrigatório")
             
             if nome and telefone and rg and cpf and endedreco_obra and endereco_resid:
-                ativo = True
-            else:
                 ativo = False
+            else:
+                ativo = True
             btn_cadastro = st.form_submit_button("Cadastrar Dados", disabled=ativo )
 
             if btn_cadastro:
@@ -77,9 +77,9 @@ def cadastrar():
             endereco_resid = st.text_input("Digite o Endereço Residencial", placeholder="Rua, nº e bairro" )
             obs = st.text_area("Observação", placeholder="não obrigatório")
             if nome and telefone and rg and cpf and endedreco_obra and endereco_resid:
-                ativo = True
-            else:
                 ativo = False
+            else:
+                ativo = True
             btn_cadastro = st.form_submit_button("Cadastrar Dados", disabled=ativo)
 
             if btn_cadastro:
