@@ -109,7 +109,7 @@ def cadastrar():
                                               'RG', 
                                               'CPF',
                                               'Endereço_Obra',
-                                              'Endereço_Residencial'
+                                              'Endereço_Residencial',
                                               'Observação'
                                              ])
                 d = {"Cidade": cidadec, 
