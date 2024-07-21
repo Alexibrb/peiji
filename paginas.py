@@ -54,7 +54,7 @@ def cadastrar():
                 data2.to_csv('clientes.csv', index=False)
                 st.success("# Cadastro Efetuado com sucesso!!!!")
                 sleep(1)
-            st.experimental_rerun()
+                st.experimental_rerun()
 
 
 
