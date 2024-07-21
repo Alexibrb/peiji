@@ -83,7 +83,8 @@ def cadastrar():
                 data2 = pd.concat([data2, df2], ignore_index=True)
                 data2.to_csv('clientes.csv', index=False)
                 st.success("# Cadastro Efetuado com sucesso!!!!")
-                sleep(3)
+                
+                # Redefinindo os campos do formulário
                 st.session_state.cidade = ''
                 st.session_state.nome = ''
                 st.session_state.telefone = ''
@@ -92,6 +93,7 @@ def cadastrar():
                 st.session_state.endereco_obra = ''
                 st.session_state.endereco_resid = ''
                 st.session_state.obs = ''
+                sleep(3)
                 st.experimental_rerun()
     else:
         with st.form("config"):
@@ -157,6 +159,7 @@ def cadastrar():
                 data2.to_csv('clientes.csv', index=False)
                 st.success("# Cadastro Efetuado com sucesso!!!!")
                 
+                # Redefinindo os campos do formulário
                 st.session_state.cidade = ''
                 st.session_state.nome = ''
                 st.session_state.telefone = ''
@@ -165,7 +168,6 @@ def cadastrar():
                 st.session_state.endereco_obra = ''
                 st.session_state.endereco_resid = ''
                 st.session_state.obs = ''
-                
                 sleep(3)
                 st.experimental_rerun()
 
