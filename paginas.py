@@ -29,32 +29,32 @@ def cadastrar():
                 ativo = False
             else:
                 ativo = True
-            btn_cadastro = st.form_submit_button("Cadastrar Dados", disabled=ativo )
-
-            if btn_cadastro:
-                cidadec = cidade
-                cliente = nome
-                fone = telefone
-                rgc = rg
-                cpfc = cpf
-                end1 = endereco_obra
-                end2 = endereco_resid
-                obs1 = obs
-                data2 = pd.DataFrame(tabclientes)
-                d = {"Cidade": cidadec, 
-                     "Nome": cliente, 
-                     "Telefone": fone, 
-                     "RG": rgc, 
-                     "CPF": cpfc, 
-                     "Endereço_Obra": end1,
-                     "Endereço_Residencial": end2,
-                     "Observação":obs1
-                    }
-                df2 = pd.DataFrame(d, index=[0])
-                data2 = pd.concat([data2, df2], ignore_index=True)
-                data2.to_csv('clientes.csv', index=False)
-                st.success("# Cadastro Efetuado com sucesso!!!!")
-                sleep(1)
+                btn_cadastro = st.form_submit_button("Cadastrar Dados", disabled=ativo )
+    
+                if btn_cadastro:
+                    cidadec = cidade
+                    cliente = nome
+                    fone = telefone
+                    rgc = rg
+                    cpfc = cpf
+                    end1 = endereco_obra
+                    end2 = endereco_resid
+                    obs1 = obs
+                    data2 = pd.DataFrame(tabclientes)
+                    d = {"Cidade": cidadec, 
+                         "Nome": cliente, 
+                         "Telefone": fone, 
+                         "RG": rgc, 
+                         "CPF": cpfc, 
+                         "Endereço_Obra": end1,
+                         "Endereço_Residencial": end2,
+                         "Observação":obs1
+                        }
+                    df2 = pd.DataFrame(d, index=[0])
+                    data2 = pd.concat([data2, df2], ignore_index=True)
+                    data2.to_csv('clientes.csv', index=False)
+                    st.success("# Cadastro Efetuado com sucesso!!!!")
+                    sleep(1)
                 st.experimental_rerun()
 
 
@@ -80,43 +80,43 @@ def cadastrar():
                 ativo = False
             else:
                 ativo = True
-            btn_cadastro = st.form_submit_button("Cadastrar Dados", disabled=ativo)
-
-            if btn_cadastro:
-                cidadec = cidade
-                cliente = nome
-                fone = telefone
-                rgc = rg
-                cpfc = cpf
-                end1 = endereco_obra
-                end2 = endereco_resid
-                obs1 = obs
-                
-                data2 = pd.DataFrame(columns=['Cidade', 
-                                              'Nome', 
-                                              'Telefone',
-                                              'RG', 
-                                              'CPF',
-                                              'Endereço_Obra',
-                                              'Endereço_Residencial'
-                                              'Observação'
-                                             ])
-                d = {"Cidade": cidadec, 
-                     "Nome": cliente, 
-                     "Telefone": fone, 
-                     "RG": rgc, 
-                     "CPF": cpfc, 
-                     "Endereço_Obra": end1,
-                     "Endereço_Residencial": end2,
-                     "Observação": obs1
-                    }
-                
-                df2 = pd.DataFrame(d, index=[0])
-                data2 = pd.concat([data2, df2], ignore_index=True)
-                data2.to_csv('clientes.csv', index=False)
-                st.success("# Cadastro Efetuado com sucesso!!!!")
-                sleep(1)
-                st.experimental_rerun()
+                btn_cadastro = st.form_submit_button("Cadastrar Dados", disabled=ativo)
+    
+                if btn_cadastro:
+                    cidadec = cidade
+                    cliente = nome
+                    fone = telefone
+                    rgc = rg
+                    cpfc = cpf
+                    end1 = endereco_obra
+                    end2 = endereco_resid
+                    obs1 = obs
+                    
+                    data2 = pd.DataFrame(columns=['Cidade', 
+                                                  'Nome', 
+                                                  'Telefone',
+                                                  'RG', 
+                                                  'CPF',
+                                                  'Endereço_Obra',
+                                                  'Endereço_Residencial'
+                                                  'Observação'
+                                                 ])
+                    d = {"Cidade": cidadec, 
+                         "Nome": cliente, 
+                         "Telefone": fone, 
+                         "RG": rgc, 
+                         "CPF": cpfc, 
+                         "Endereço_Obra": end1,
+                         "Endereço_Residencial": end2,
+                         "Observação": obs1
+                        }
+                    
+                    df2 = pd.DataFrame(d, index=[0])
+                    data2 = pd.concat([data2, df2], ignore_index=True)
+                    data2.to_csv('clientes.csv', index=False)
+                    st.success("# Cadastro Efetuado com sucesso!!!!")
+                    sleep(1)
+                    st.experimental_rerun()
 
 
 
