@@ -4,8 +4,7 @@ import os
 from time import sleep
 
 # Inicializando o estado da sessão para os campos do formulário
-if 'cidade' not in st.session_state:
-    st.session_state.cidade = ''
+
 if 'nome' not in st.session_state:
     st.session_state.nome = ''
 if 'telefone' not in st.session_state:
@@ -29,14 +28,14 @@ def cadastrar():
         tabclientes = pd.read_csv('clientes.csv', sep=",")
 
         with st.form("configp"):
-            st.session_state.cidade = st.selectbox(label="Selecione a sua Cidade:", options=[
+            cidade = st.selectbox(label="Selecione a sua Cidade:", options=[
                 "Condeúba",
                 "Maetinga",
                 "Pres. Jânio Quadros",
                 "Cordeiros",
                 "Piripá",
                 "Mortugaba"
-            ], index=0 if st.session_state.cidade == '' else ["Condeúba", "Maetinga", "Pres. Jânio Quadros", "Cordeiros", "Piripá", "Mortugaba"].index(st.session_state.cidade))
+            ]
             
             st.session_state.nome = st.text_input("Digite seu nome", placeholder="Nome Completo", value=st.session_state.nome)
             st.session_state.telefone = st.text_input("Digite seu Telefone", placeholder="(xx) xxxx-xxxx", value=st.session_state.telefone)
@@ -58,7 +57,7 @@ def cadastrar():
             btn_cadastro = st.form_submit_button("Cadastrar Dados")
 
             if btn_cadastro and are_fields_filled(st.session_state.nome, st.session_state.telefone, st.session_state.rg, st.session_state.cpf, st.session_state.endereco_obra, st.session_state.endereco_resid):
-                cidadec = st.session_state.cidade
+                cidadec = cidade
                 cliente = st.session_state.nome
                 fone = st.session_state.telefone
                 rgc = st.session_state.rg
@@ -81,7 +80,7 @@ def cadastrar():
                 data2.to_csv('clientes.csv', index=False)
                 st.success("# Cadastro Efetuado com sucesso!!!!")
                 sleep(3)
-                st.session_state.cidade = ''
+                
                 st.session_state.nome = ''
                 st.session_state.telefone = ''
                 st.session_state.rg = ''
@@ -92,14 +91,14 @@ def cadastrar():
                 st.experimental_rerun()
     else:
         with st.form("config"):
-            st.session_state.cidade = st.selectbox(label="Selecione a sua Cidade:", options=[
+            cidade = st.selectbox(label="Selecione a sua Cidade:", options=[
                 "Condeúba",
                 "Maetinga",
                 "Pres. Jânio Quadros",
                 "Cordeiros",
                 "Piripá",
                 "Mortugaba"
-            ], index=0 if st.session_state.cidade == '' else ["Condeúba", "Maetinga", "Pres. Jânio Quadros", "Cordeiros", "Piripá", "Mortugaba"].index(st.session_state.cidade))
+            ]
             
             st.session_state.nome = st.text_input("Digite seu nome", placeholder="Nome Completo", value=st.session_state.nome)
             st.session_state.telefone = st.text_input("Digite seu Telefone", placeholder="(xx) xxxx-xxxx", value=st.session_state.telefone)
@@ -121,7 +120,7 @@ def cadastrar():
             btn_cadastro = st.form_submit_button("Cadastrar Dados")
 
             if btn_cadastro and are_fields_filled(st.session_state.nome, st.session_state.telefone, st.session_state.rg, st.session_state.cpf, st.session_state.endereco_obra, st.session_state.endereco_resid):
-                cidadec = st.session_state.cidade
+                cidadec = cidade
                 cliente = st.session_state.nome
                 fone = st.session_state.telefone
                 rgc = st.session_state.rg
@@ -154,7 +153,7 @@ def cadastrar():
                 data2.to_csv('clientes.csv', index=False)
                 st.success("# Cadastro Efetuado com sucesso!!!!")
                 
-                st.session_state.cidade = ''
+                
                 st.session_state.nome = ''
                 st.session_state.telefone = ''
                 st.session_state.rg = ''
