@@ -3,7 +3,7 @@ import pandas as pd
 import os
 from time import sleep
 
-def are_fields_filled(nome, telefone, rg, cpf, endereco_obra, enderecp_resid):
+def are_fields_filled(nome, telefone, rg, cpf, endereco_obra, endereco_resid):
     return name and address and phone
     
 def cadastrar():
@@ -79,14 +79,14 @@ def cadastrar():
             warning_message = st.empty()
 
             # Desativando o botão se algum campo estiver vazio
-            if not are_fields_filled(nome, telefone, rg, cpf, endereco_obra, enderecp_resid):
+            if not are_fields_filled(nome, telefone, rg, cpf, endereco_obra, endereco_resid):
                 warning_message.warning("Por favor, preencha todos os campos.")
             else:
                 warning_message.empty()
                 
             btn_cadastro = st.form_submit_button("Cadastrar Dados")
     
-            if btn_cadastro and are_fields_filled(nome, telefone, rg, cpf, endereco_obra, enderecp_resid):
+            if btn_cadastro and are_fields_filled(nome, telefone, rg, cpf, endereco_obra, endereco_resid):
                 cidadec = cidade
                 cliente = nome
                 fone = telefone
