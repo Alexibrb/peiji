@@ -10,7 +10,7 @@ st.set_page_config(
 )
 estilos()
 titulo()
-tab1, tab2 = st.tabs(["Cadastar", "Visualizar"])
+tab1, tab2 = st.tabs(["Cadastrar Dados", "Visualizar Dados(Só admin)"])
 with tab1:
     cadastrar()
  
