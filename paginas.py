@@ -29,13 +29,13 @@ def cadastrar():
 
         with st.form("configp"):
             cidade = st.selectbox(label="Selecione a sua Cidade:", options=[
-                "Condeúba",
-                "Maetinga",
-                "Pres. Jânio Quadros",
-                "Cordeiros",
-                "Piripá",
-                "Mortugaba"
-            ]
+                                                                            "Condeúba",
+                                                                            "Maetinga",
+                                                                            "Pres. Jânio Quadros",
+                                                                            "Cordeiros",
+                                                                            "Piripá",
+                                                                            "Mortugaba"
+                                                                            ]
             
             st.session_state.nome = st.text_input("Digite seu nome", placeholder="Nome Completo", value=st.session_state.nome)
             st.session_state.telefone = st.text_input("Digite seu Telefone", placeholder="(xx) xxxx-xxxx", value=st.session_state.telefone)
@@ -92,13 +92,13 @@ def cadastrar():
     else:
         with st.form("config"):
             cidade = st.selectbox(label="Selecione a sua Cidade:", options=[
-                "Condeúba",
-                "Maetinga",
-                "Pres. Jânio Quadros",
-                "Cordeiros",
-                "Piripá",
-                "Mortugaba"
-            ]
+                                                                            "Condeúba",
+                                                                            "Maetinga",
+                                                                            "Pres. Jânio Quadros",
+                                                                            "Cordeiros",
+                                                                            "Piripá",
+                                                                            "Mortugaba"
+                                                                            ]
             
             st.session_state.nome = st.text_input("Digite seu nome", placeholder="Nome Completo", value=st.session_state.nome)
             st.session_state.telefone = st.text_input("Digite seu Telefone", placeholder="(xx) xxxx-xxxx", value=st.session_state.telefone)
