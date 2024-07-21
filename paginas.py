@@ -3,7 +3,9 @@ import pandas as pd
 import os
 from time import sleep
 
-
+def are_fields_filled(nome, telefone, rg, cpf, endereco_obra, enderecp_resid):
+    return name and address and phone
+    
 def cadastrar():
     if os.path.exists('clientes.csv'):
         tabclientes = pd.read_csv('clientes.csv', sep=",")
@@ -73,10 +75,18 @@ def cadastrar():
             endereco_obra = st.text_input("Digite o Endereço da Obra", placeholder="Rua, nº e bairro")
             endereco_resid = st.text_input("Digite o Endereço Residencial", placeholder="Rua, nº e bairro" )
             obs = st.text_area("Observação", placeholder="não obrigatório")
-           
+            # Mensagem de aviso
+            warning_message = st.empty()
+
+            # Desativando o botão se algum campo estiver vazio
+            if not are_fields_filled(nome, telefone, rg, cpf, endereco_obra, enderecp_resid):
+                warning_message.warning("Por favor, preencha todos os campos.")
+            else:
+                warning_message.empty()
+                
             btn_cadastro = st.form_submit_button("Cadastrar Dados")
     
-            if btn_cadastro:
+            if btn_cadastro and are_fields_filled(nome, telefone, rg, cpf, endereco_obra, enderecp_resid):
                 cidadec = cidade
                 cliente = nome
                 fone = telefone
