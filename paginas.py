@@ -83,6 +83,8 @@ def cadastrar():
                 cpfc = cpf
                 end1 = endereco_obra
                 end2 = endereco_resid
+                obs1 = obs
+                
                 data2 = pd.DataFrame(columns=['Cidade', 
                                               'Nome', 
                                               'Telefone',
@@ -90,7 +92,7 @@ def cadastrar():
                                               'CPF',
                                               'Endereço_Obra',
                                               'Endereço_Residencial'
-                                              'obs'
+                                              'Observação'
                                              ])
                 d = {"Cidade": cidadec, 
                      "Nome": cliente, 
