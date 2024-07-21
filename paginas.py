@@ -10,7 +10,7 @@ def cadastrar():
     if os.path.exists('clientes.csv'):
         tabclientes = pd.read_csv('clientes.csv', sep=",")
 
-        with st.form("configp", clear_on_submit=True):
+        with st.form("configp"):
             cidade = st.selectbox(label="Selecione a sua Cidade:", options=[
                 "Condeúba",
                 "Maetinga",
@@ -66,7 +66,7 @@ def cadastrar():
 
 
     else:
-        with st.form("config", clear_on_submit=True):
+        with st.form("config"):
             cidade = st.selectbox(label="Selecione a sua Cidade:", options=[
                 "Condeúba",
                 "Maetinga",
@@ -94,6 +94,7 @@ def cadastrar():
             btn_cadastro = st.form_submit_button("Cadastrar Dados")
     
             if btn_cadastro and are_fields_filled(nome, telefone, rg, cpf, endereco_obra, endereco_resid):
+                
                 cidadec = cidade
                 cliente = nome
                 fone = telefone
