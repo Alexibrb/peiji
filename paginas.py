@@ -4,7 +4,7 @@ import os
 from time import sleep
 
 def are_fields_filled(nome, telefone, rg, cpf, endereco_obra, endereco_resid):
-    return name and address and phone
+    return nome and telefone and rg and cpf and endereco_obra and endereco_resid
     
 def cadastrar():
     if os.path.exists('clientes.csv'):
