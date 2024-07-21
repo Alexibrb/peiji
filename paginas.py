@@ -60,8 +60,7 @@ def cadastrar():
                 data2 = pd.concat([data2, df2], ignore_index=True)
                 data2.to_csv('clientes.csv', index=False)
                 st.success("# Cadastro Efetuado com sucesso!!!!")
-                sleep(1)
-                st.experimental_rerun()
+                
 
 
 
@@ -127,8 +126,7 @@ def cadastrar():
                 data2 = pd.concat([data2, df2], ignore_index=True)
                 data2.to_csv('clientes.csv', index=False)
                 st.success("# Cadastro Efetuado com sucesso!!!!")
-                sleep(1)
-                st.experimental_rerun()
+                
 
 
 
