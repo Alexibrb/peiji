@@ -35,7 +35,7 @@ def cadastrar():
             else:
                 warning_message.empty()
                 
-                btn_cadastro = st.form_submit_button("Cadastrar Dados")
+            btn_cadastro = st.form_submit_button("Cadastrar Dados")
     
             if btn_cadastro and are_fields_filled(nome, telefone, rg, cpf, endereco_obra, endereco_resid):
                 cidadec = cidade
@@ -60,6 +60,8 @@ def cadastrar():
                 data2 = pd.concat([data2, df2], ignore_index=True)
                 data2.to_csv('clientes.csv', index=False)
                 st.success("# Cadastro Efetuado com sucesso!!!!")
+                sleep(3)
+                st.experimental_rerun()
                 
 
 
@@ -127,6 +129,9 @@ def cadastrar():
                 data2.to_csv('clientes.csv', index=False)
                 st.success("# Cadastro Efetuado com sucesso!!!!")
                 
+                
+                sleep(3)
+                st.experimental_rerun()
 
 
 
