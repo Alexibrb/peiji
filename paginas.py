@@ -94,7 +94,7 @@ def cadastrar():
             else:
                 warning_message.empty()
                 
-                btn_cadastro = st.form_submit_button("Cadastrar Dados")
+            btn_cadastro = st.form_submit_button("Cadastrar Dados")
     
             if btn_cadastro and are_fields_filled(nome, telefone, rg, cpf, endereco_obra, endereco_resid):
                 
