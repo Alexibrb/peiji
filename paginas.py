@@ -62,6 +62,8 @@ def cadastrar():
                 st.success("# Cadastro Efetuado com sucesso!!!!")
                 sleep(3)
                 st.experimental_rerun()
+            else:
+                st.warning('Preencha todos os campos')
                 
 
 
@@ -132,6 +134,8 @@ def cadastrar():
                 
                 sleep(3)
                 st.experimental_rerun()
+            else:
+                st.warning('Preencha todos os campos')
 
 
 
